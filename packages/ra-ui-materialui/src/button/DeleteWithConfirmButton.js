@@ -66,9 +66,9 @@ const DeleteWithConfirmButton = ({
     const classes = useStyles({ classes: classesOverride });
     const [deleteOne] = useDelete(resource, record.id, record, {
         onSuccess: () => {
-            notify('ra.notification.deleted', 'info', { smart_count: 1 });
             redirect(redirectTo, basePath);
             refresh();
+            notify('ra.notification.deleted', 'info', { smart_count: 1 });
         },
         onFailure: error =>
             notify(

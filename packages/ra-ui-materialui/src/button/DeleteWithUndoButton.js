@@ -57,9 +57,9 @@ const DeleteWithUndoButton = ({
     const refresh = useRefresh();
     const [deleteOne, { loading }] = useDelete(resource, record.id, record, {
         onSuccess: () => {
-            notify('ra.notification.deleted', 'info', { smart_count: 1 }, true);
             redirect(redirectTo, basePath);
             refresh();
+            notify('ra.notification.deleted', 'info', { smart_count: 1 }, true);
         },
         onFailure: error =>
             notify(
